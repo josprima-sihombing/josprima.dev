@@ -1,0 +1,37 @@
+@use "/src/styles/variables.module.scss" as var;
+
+.root {
+  background-color: var.$orange;
+  padding: 90px var.$padding;
+}
+
+.section {
+  &__intro {
+    color: var.$black;
+    letter-spacing: 4px;
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+
+  &__title {
+    color: var.$blue_70;
+    font-size: 68px;
+    margin-bottom: 0;
+    line-height: 100%;
+  }
+
+  &__sub_title {
+    color: rgba($color: var.$blue_70, $alpha: 0.7);
+    font-size: 68px;
+    margin-bottom: 24px;
+    line-height: 100%;
+  }
+
+  &__description {
+    max-width: 720px;
+    font-size: 18px;
+    color: var.$black;
+    line-height: 27px;
+    text-indent: 48px;
+  }
+}
