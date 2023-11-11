@@ -1,0 +1,64 @@
+@use "/src/styles/variables.module.scss" as var;
+
+.root {
+  overflow: hidden;
+  padding: 32px var.$padding;
+  white-space: nowrap;
+  position: relative;
+  background-color: var.$white;
+  display: flex;
+  align-items: center;
+  max-width: 1024px;
+  margin: 120px auto;
+
+  &::before, &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 120px;
+    z-index: 2;
+  }
+
+  &::before {
+    background: linear-gradient(to right, var.$white, rgba($color: var.$white, $alpha: 0));
+    left: -2px;
+  }
+
+  &::after {
+    right: -2px;
+    background: linear-gradient(to left, var.$white, rgba($color: var.$white, $alpha: 0));
+  }
+}
+
+.root:hover {
+  .slider {
+    animation-play-state: paused;
+  }
+}
+
+.slider {
+  display: flex;
+  align-items: center;
+  filter: grayscale(1);
+  transform: translateX(0);
+  animation-name: slide;
+  animation-duration: 20s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+
+  > * {
+    margin-right: 128px;
+  }
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}

@@ -3,6 +3,7 @@
 import NextLink from "next/link";
 import css from "./style.module.scss";
 import { usePathname } from "next/navigation";
+import classNames from "classnames";
 
 type LinkProps = {
   href: string;
@@ -12,11 +13,12 @@ type LinkProps = {
 export default function Link({ href, children }: LinkProps) {
   const pathName = usePathname();
 
+  const cn = classNames(css.root, {
+    [css.active]: pathName === href,
+  });
+
   return (
-    <NextLink
-      href={href}
-      className={`${css.root} ${pathName === href ? css.active : ""}`}
-    >
+    <NextLink href={href} className={cn}>
       {children}
     </NextLink>
   );
