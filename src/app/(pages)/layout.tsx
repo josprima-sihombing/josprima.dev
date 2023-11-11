@@ -1,6 +1,6 @@
-import Container from "@/components/container";
-import Footer from "@/components/footer";
-import Navbar from "@/components/navbar";
+import Container from "@/components/atoms/container";
+import Footer from "@/components/sections/footer";
+import Navbar from "@/components/sections/navbar";
 
 import css from "@/styles/app.module.scss";
 

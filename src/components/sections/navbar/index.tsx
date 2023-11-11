@@ -1,16 +1,16 @@
 "use client";
 
-import Logo from "@/components/logo";
+import Logo from "@/components/atoms/logo";
 import { MdMenu } from "react-icons/md";
 
 import css from "./style.module.scss";
-import Link from "../link";
-import Button from "../button";
+import Link from "../../atoms/link";
+import Button from "../../atoms/button";
 import { useEffect, useRef, useState } from "react";
 import useClickOutside from "@/hooks/commons/use-click-outside";
 import { usePathname } from "next/navigation";
 import cn from "classnames";
-import Container from "../container";
+import Container from "../../atoms/container";
 
 type NavbarProps = {
   className?: string;

@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import Container from "../container";
+import Container from "../../atoms/container";
 
 import css from "./style.module.scss";
 import { sourceSerif } from "@/fonts";

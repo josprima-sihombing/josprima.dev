@@ -1,0 +1,40 @@
+@use "/src/styles/variables.module.scss" as var;
+
+.root {
+  color: var.$black_90;
+  line-height: 100%;
+
+  &__heading {
+    font-size: 48px;
+  }
+
+  &__sub_heading {
+    font-size: 28px;
+  }
+
+  &__section_title {
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  &__card_title {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+  }
+
+  &__card_title_sm {
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  &__body {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  &__caption {
+    font-size: 12px;
+    color: var.$black_50;
+  }
+}

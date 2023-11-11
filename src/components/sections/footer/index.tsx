@@ -1,6 +1,6 @@
 import cn from "classnames";
 import css from "./style.module.scss";
-import Container from "../container";
+import Container from "../../atoms/container";
 
 type FooterProps = {
   className?: string;
