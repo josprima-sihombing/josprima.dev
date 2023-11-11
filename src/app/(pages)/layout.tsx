@@ -1,3 +1,5 @@
+import Container from "@/components/container";
+import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 
 import css from "@/styles/app.module.scss";
@@ -9,8 +11,11 @@ export default function PageLayout({
 }) {
   return (
     <main className={css.root}>
-      <Navbar />
-      {children}
+      <Navbar className={css.navbar} />
+
+      <article className={css.content}>{children}</article>
+
+      <Footer className={css.footer} />
     </main>
   );
 }

@@ -1,5 +1,15 @@
 @use "/src/styles/variables.module.scss" as var;
 
 .root {
-  background-color: var.$black_10;
+  background-color: var.$white;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar, .footer {
+  flex-shrink: 0;
+}
+
+.content {
+  flex-grow: 1;
 }

@@ -1,0 +1,10 @@
+@use "/src/styles/variables.module.scss" as var;
+
+.root {
+  padding: 18px var.$padding;
+  text-align: center;
+  background-color: var.$black_30;
+  font-size: 14px;
+  overflow: hidden;
+}
+

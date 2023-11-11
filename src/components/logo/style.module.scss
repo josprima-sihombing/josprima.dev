@@ -2,5 +2,37 @@
 
 .root {
   font-size: 18px;
-  color: var.$black_80;
+  color: var.$blue_70;
+  text-decoration: none;
+  font-weight: 700;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0px;
+    transform: translateY(-50%);
+    height: 18px;
+    width: 11px;
+    background-color: var.$orange_10;
+    animation-name: cursor;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+  }
+}
+
+@keyframes cursor {
+  0% {
+    opacity: 0.4;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0.4;
+  }
 }

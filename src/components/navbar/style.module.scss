@@ -1,11 +1,14 @@
 @use "/src/styles/variables.module.scss" as var;
 
 .root {
-  background-color: var.$white;
+  background-color: var.$orange;
+  padding: 8px var.$padding;
+}
+
+.navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 8px var.$padding;
   overflow: hidden;
 }
 
@@ -24,6 +27,7 @@
 @media screen and (max-width: 768px) {
   .root {
     justify-content: flex-start;
+    gap: 18px;
     padding: 8px var.$padding_sm;
 
     &__open {

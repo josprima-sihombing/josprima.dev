@@ -9,13 +9,27 @@ import Button from "../button";
 import { useEffect, useRef, useState } from "react";
 import useClickOutside from "@/hooks/commons/use-click-outside";
 import { usePathname } from "next/navigation";
+import cn from "classnames";
+import Container from "../container";
 
-export default function Navbar() {
+type NavbarProps = {
+  className?: string;
+};
+
+export default function Navbar({ className }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef(null);
   const pathName = usePathname();
 
   useClickOutside(menuRef, hideMenu);
+
+  const classNames = cn(
+    css.root,
+    {
+      [css.root__open]: isOpen,
+    },
+    className,
+  );
 
   function toggleMenu() {
     setIsOpen((currentIsOpen) => !currentIsOpen);
@@ -32,20 +46,22 @@ export default function Navbar() {
   }, [pathName]);
 
   return (
-    <nav className={`${css.root} ${isOpen ? css.root__open : ""}`}>
-      <Button className={css.toggle_btn} onClick={toggleMenu}>
-        <MdMenu />
-      </Button>
-      <Logo className={css.logo} />
+    <nav className={classNames}>
+      <Container className={css.navbar}>
+        <Button className={css.toggle_btn} onClick={toggleMenu}>
+          <MdMenu />
+        </Button>
+        <Logo className={css.logo} />
 
-      <div
-        className={`${css.menus} ${isOpen ? css.menus__open : ""}`}
-        ref={menuRef}
-      >
-        <Link href="/">Home</Link>
-        <Link href="/post">Posts</Link>
-        <Link href="/contact">Contact</Link>
-      </div>
+        <div
+          className={`${css.menus} ${isOpen ? css.menus__open : ""}`}
+          ref={menuRef}
+        >
+          <Link href="/">Home</Link>
+          <Link href="/post">Posts</Link>
+          <Link href="/contact">Contact</Link>
+        </div>
+      </Container>
     </nav>
   );
 }
