@@ -1,0 +1,19 @@
+@use "/src/styles/variables.module.scss" as var;
+
+.root {
+  display: inline-block;
+  padding: 12px 18px;
+  text-decoration: none;
+  color: var.$black_80;
+  font-size: 16px;
+  border-radius: 5px;
+
+  &.active {
+    background-color: var.$black_20;
+    font-weight: 700;
+  }
+
+  &:hover:not(.active) {
+    background-color: var.$black_10;
+  }
+}

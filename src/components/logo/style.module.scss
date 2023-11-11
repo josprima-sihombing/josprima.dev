@@ -1,0 +1,6 @@
+@use "/src/styles/variables.module.scss" as var;
+
+.root {
+  font-size: 18px;
+  color: var.$black_80;
+}

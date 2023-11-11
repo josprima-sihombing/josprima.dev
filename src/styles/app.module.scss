@@ -1,0 +1,5 @@
+@use "/src/styles/variables.module.scss" as var;
+
+.root {
+  background-color: var.$black_10;
+}

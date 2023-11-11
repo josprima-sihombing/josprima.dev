@@ -1,0 +1,18 @@
+@use "/src/styles/variables.module.scss" as var;
+
+.root {
+  padding: 12px 18px;
+  text-decoration: none;
+  color: var.$black_80;
+  font-size: 14px;
+  border-radius: 5px;
+  line-height: 0;
+  border: 0;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+  .root {
+    padding: 8px;
+  }
+}
