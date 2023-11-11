@@ -13,6 +13,7 @@ const dummyPosts = [
     createdAt: 1678900000000,
     readingTime: 320,
     title: "The Art of Code Optimization",
+    href: "#",
   },
   {
     id: "ghi789",
@@ -20,6 +21,7 @@ const dummyPosts = [
     createdAt: 1690123000000,
     readingTime: 750,
     title: "Python: A Journey into Data Science",
+    href: "#",
   },
   {
     id: "def456",
@@ -27,6 +29,7 @@ const dummyPosts = [
     createdAt: 1684567000000,
     readingTime: 550,
     title: "Exploring the Wonders of JavaScript ES2022",
+    href: "#",
   },
   {
     id: "pqr678",
@@ -34,6 +37,7 @@ const dummyPosts = [
     createdAt: 1707092000000,
     readingTime: 880,
     title: "Cybersecurity in the Age of IoT",
+    href: "#",
   },
   {
     id: "jkl012",
@@ -41,6 +45,7 @@ const dummyPosts = [
     createdAt: 1695780000000,
     readingTime: 420,
     title: "Responsive Web Design Best Practices",
+    href: "#",
   },
   {
     id: "mno345",
@@ -48,6 +53,7 @@ const dummyPosts = [
     createdAt: 1701436000000,
     readingTime: 680,
     title: "The Evolution of Frontend Frameworks",
+    href: "#",
   },
 ];
 
@@ -68,6 +74,7 @@ export default function LatestPost() {
             createdAt={post.createdAt}
             readingTime={post.readingTime}
             title={post.title}
+            href={post.href}
           />
         ))}
       </Grid>

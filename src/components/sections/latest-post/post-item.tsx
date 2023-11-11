@@ -2,13 +2,17 @@ import InitialLetterAvatar from "@/components/atoms/initial-letter-avatar";
 import Row from "@/components/atoms/row";
 import Typography from "@/components/atoms/typography";
 import formatDate from "@/utils/format-date";
+import Link from "next/link";
 import { MdCircle } from "react-icons/md";
+
+import css from "./style.module.scss";
 
 type PostItemProps = {
   title: string;
   createdAt: number;
   author: string;
   readingTime: number; // Reading time in seconds;
+  href: string;
 };
 
 export default function PostItem({
@@ -16,9 +20,10 @@ export default function PostItem({
   createdAt,
   readingTime,
   title,
+  href,
 }: PostItemProps) {
   return (
-    <div>
+    <Link href={href} className={css.item}>
       <Row>
         <InitialLetterAvatar name={author} />
         <Typography variant="card-title-sm">{author}</Typography>
@@ -35,6 +40,6 @@ export default function PostItem({
         </Typography>
         <Typography variant="caption">{readingTime}</Typography>
       </Row>
-    </div>
+    </Link>
   );
 }

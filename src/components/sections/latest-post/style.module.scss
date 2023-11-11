@@ -3,3 +3,16 @@
 .root {
   padding: var.$padding;
 }
+
+.item {
+  text-decoration: none;
+  color: var.$black_90;
+  padding: 8px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease-in;
+
+  &:hover {
+    background-color: var.$orange_5;
+    transition: background-color 0.3s ease-in;
+  }
+}
