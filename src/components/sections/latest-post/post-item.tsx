@@ -9,22 +9,18 @@ import css from "./style.module.scss";
 type PostItemProps = {
   title: string;
   createdAt: number;
-  author: string;
   readingTime: number; // Reading time in seconds;
-  href: string;
+  slug: string;
 };
 
 export default function PostItem({
-  author,
   createdAt,
   readingTime,
   title,
-  href,
+  slug,
 }: PostItemProps) {
   return (
-    <Link href={href} className={css.item}>
-      <Typography variant="card-title-sm">{author}</Typography>
-
+    <Link href={`/post/${slug}`} className={css.item}>
       <Typography variant="card-title" style={{ marginBottom: "8px" }}>
         {title}
       </Typography>

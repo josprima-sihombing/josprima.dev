@@ -58,8 +58,8 @@ export default function Navbar({ className }: NavbarProps) {
           ref={menuRef}
         >
           <Link href="/">Home</Link>
-          <Link href="/post">Posts</Link>
-          <Link href="/contact">Contact</Link>
+          {/* <Link href="/post">Posts</Link>
+          <Link href="/contact">Contact</Link> */}
         </div>
       </Container>
     </nav>

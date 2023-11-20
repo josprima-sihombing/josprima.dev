@@ -62,6 +62,7 @@ export default function Home() {
       alt: "typescript",
     },
   ];
+
   return (
     <>
       <HeroSection />
