@@ -19,7 +19,7 @@ export default function LatestPost() {
       <Grid column={3}>
         {posts.map((post) => (
           <PostItem
-            key={post.id}
+            key={post.slug}
             createdAt={post.createdAt}
             readingTime={post.readingTime}
             title={post.title}

@@ -8,7 +8,7 @@ import css from "./style.module.scss";
 
 type PostItemProps = {
   title: string;
-  createdAt: number;
+  createdAt: string | number;
   readingTime: number; // Reading time in seconds;
   slug: string;
 };
