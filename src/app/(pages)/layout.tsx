@@ -1,4 +1,3 @@
-import Container from "@/components/atoms/container";
 import Footer from "@/components/sections/footer";
 import Navbar from "@/components/sections/navbar";
 

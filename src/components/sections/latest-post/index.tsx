@@ -5,7 +5,7 @@ import css from "./style.module.scss";
 import PostItem from "./post-item";
 import Grid from "@/components/atoms/grid";
 import Row from "@/components/atoms/row";
-import { posts } from "@/data/posts";
+import { posts } from "@/data/posts/posts";
 
 export default function LatestPost() {
   return (

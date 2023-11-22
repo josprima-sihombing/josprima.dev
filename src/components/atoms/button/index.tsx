@@ -1,10 +1,12 @@
+import { CSSProperties } from "react";
 import css from "./style.module.scss";
 
-type ButtonProps = {
+export type ButtonProps = {
   type?: "button" | "submit" | "reset";
-  children: string | React.ReactNode;
+  children?: string | React.ReactNode;
   className?: string;
   onClick?: () => void;
+  style?: CSSProperties;
 };
 
 export default function Button({
@@ -12,12 +14,14 @@ export default function Button({
   children,
   className,
   onClick,
+  style,
 }: ButtonProps) {
   return (
     <button
       type={type}
       className={`${css.root} ${className}`}
       onClick={onClick}
+      style={style}
     >
       {children}
     </button>
