@@ -13,11 +13,14 @@ export default function PageLayout({
     <main className={css.root}>
       <article className={css.content}>
         <Container>
-          <BackButton style={{ marginTop: "24px" }} />
+          <div style={{ padding: "12px 24px" }}>
+            <BackButton style={{ marginTop: "24px" }} />
+          </div>
 
           <div
             style={{
               marginTop: "24px",
+              padding: "12px 24px",
             }}
           >
             {children}
