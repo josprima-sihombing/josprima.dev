@@ -1,5 +1,8 @@
 import { CSSProperties } from "react";
 import css from "./style.module.scss";
+import classNames from "classnames";
+
+export type ButtonVariantType = "contained" | "outlined";
 
 export type ButtonProps = {
   type?: "button" | "submit" | "reset";
@@ -7,6 +10,7 @@ export type ButtonProps = {
   className?: string;
   onClick?: () => void;
   style?: CSSProperties;
+  variant?: ButtonVariantType;
 };
 
 export default function Button({
@@ -15,14 +19,15 @@ export default function Button({
   className,
   onClick,
   style,
+  variant = "contained",
 }: ButtonProps) {
+  const cn = classNames(css.root, className, {
+    [css.root__contained]: variant === "contained",
+    [css.root__outlined]: variant === "outlined",
+  });
+
   return (
-    <button
-      type={type}
-      className={`${css.root} ${className}`}
-      onClick={onClick}
-      style={style}
-    >
+    <button type={type} className={cn} onClick={onClick} style={style}>
       {children}
     </button>
   );

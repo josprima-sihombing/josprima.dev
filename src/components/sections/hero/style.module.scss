@@ -9,29 +9,29 @@
   &__intro {
     color: var.$black;
     letter-spacing: 4px;
-    font-size: 14px;
+    font-size: 1.2rem;
     margin-bottom: 24px;
   }
 
   &__title {
     color: var.$blue_70;
-    font-size: 68px;
+    font-size: 4rem;
     margin-bottom: 0;
     line-height: 100%;
   }
 
   &__sub_title {
     color: rgba($color: var.$blue_70, $alpha: 0.7);
-    font-size: 68px;
+    font-size: 4rem;
     margin-bottom: 24px;
     line-height: 100%;
   }
 
   &__description {
     max-width: 720px;
-    font-size: 18px;
+    font-size: 1.2rem;
     color: var.$black;
-    line-height: 27px;
-    text-indent: 48px;
+    line-height: 1.8rem;
+    text-indent: 1.5rem;
   }
 }

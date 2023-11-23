@@ -10,6 +10,15 @@
   border: 0;
   font-weight: bold;
   cursor: pointer;
+
+  &__contained {
+    background-color: var.$orange;
+  }
+
+  &__outlined {
+    background-color: transparent;
+    border: 2px solid var.$blue_70;
+  }
 }
 
 @media screen and (max-width: 768px) {

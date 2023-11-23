@@ -48,7 +48,11 @@ export default function Navbar({ className }: NavbarProps) {
   return (
     <nav className={classNames}>
       <Container className={css.navbar}>
-        <Button className={css.toggle_btn} onClick={toggleMenu}>
+        <Button
+          className={css.toggle_btn}
+          onClick={toggleMenu}
+          variant="outlined"
+        >
           <MdMenu />
         </Button>
         <Logo className={css.logo} />
