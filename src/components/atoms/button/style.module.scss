@@ -1,10 +1,10 @@
 @use "/src/styles/variables.module.scss" as var;
 
 .root {
-  padding: 12px 18px;
+  padding: 1rem 1rem;
   text-decoration: none;
   color: var.$black_80;
-  font-size: 14px;
+  font-size: 1rem;
   border-radius: 5px;
   line-height: 0;
   border: 0;
@@ -23,6 +23,6 @@
 
 @media screen and (max-width: 768px) {
   .root {
-    padding: 8px;
+    padding: 0.6rem 0.8rem;
   }
 }

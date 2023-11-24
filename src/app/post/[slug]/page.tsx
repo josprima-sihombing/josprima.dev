@@ -1,7 +1,6 @@
-import Container from "@/components/atoms/container";
-import Typography from "@/components/atoms/typography";
 import { posts } from "@/data/posts/posts";
 import { readFile } from "fs/promises";
+import css from "./style.module.scss";
 
 export async function generateStaticParams() {
   return posts.map((post) => ({
@@ -26,5 +25,7 @@ const getPostContent = async (slug: string) => {
 export default async function PostDetailPage({ params }: PostDetailPageProps) {
   const content = await getPostContent(params.slug);
 
-  return <div dangerouslySetInnerHTML={{ __html: content }} />;
+  return (
+    <div dangerouslySetInnerHTML={{ __html: content }} className={css.root} />
+  );
 }

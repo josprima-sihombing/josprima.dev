@@ -5,6 +5,7 @@ export const sourceSerif = Source_Serif_4({
   display: "swap",
   style: ["italic", "normal"],
   subsets: ["latin"],
+  variable: "--font-source-serif",
 });
 
 export const openSans = Open_Sans({
@@ -12,4 +13,5 @@ export const openSans = Open_Sans({
   display: "swap",
   style: ["italic", "normal"],
   subsets: ["latin"],
+  variable: "--font-open-sans",
 });

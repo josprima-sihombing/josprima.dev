@@ -1,0 +1,33 @@
+@use "/src/styles/variables.module.scss" as var;
+
+.root {
+  color: var.$black_70;
+
+  h1 {
+    margin-bottom: 1.5rem;
+  }
+
+  h2 {
+    margin-bottom: 1rem;
+  }
+
+  h3, p {
+    margin-bottom: 0.8rem;
+  }
+
+  h1 {
+    font-size: 3rem;
+    border-bottom: 1px solid var.$black_20;
+    padding-bottom: 1.5rem;
+    font-family: var(--font-source-serif);
+  }
+
+  h2 { font-size: 2rem; }
+
+  h3 {
+    font-size: 1.5rem;
+    font-family: var(--font-source-serif);
+  }
+
+  p { font-size: 1rem; }
+}
