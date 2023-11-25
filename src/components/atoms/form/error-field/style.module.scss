@@ -1,0 +1,9 @@
+@use "/src/styles/variables.module.scss" as var;
+
+.root {
+  font-size: 0.8rem;
+  color: var.$red;
+  display: block;
+
+  &:empty { display: none; }
+}

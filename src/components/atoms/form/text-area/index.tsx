@@ -9,6 +9,7 @@ import Typography from "@/components/atoms/typography";
 import { FieldProps, RhfFieldProps } from "../field-props";
 
 import css from "../style.module.scss";
+import ErrorField from "../error-field";
 
 export default function TextArea<T extends FieldValues>(
   props: RhfFieldProps<T, FieldProps>,
@@ -40,9 +41,7 @@ export default function TextArea<T extends FieldValues>(
         />
       </label>
 
-      <div className={css.root__error}>
-        <span>{errors[rest.name]?.message?.toString()}</span>
-      </div>
+      <ErrorField message={errors[rest.name]?.message?.toString()} />
     </div>
   );
 }

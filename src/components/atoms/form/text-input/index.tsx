@@ -6,6 +6,7 @@ import { HTMLInputTypeAttribute } from "react";
 
 import css from "../style.module.scss";
 import { FieldProps, RhfFieldProps } from "../field-props";
+import ErrorField from "../error-field";
 
 type TextInputProps = FieldProps & {
   type?: HTMLInputTypeAttribute;
@@ -39,9 +40,7 @@ export default function TextInput<T extends FieldValues>(
         />
       </label>
 
-      <div className={css.root__error}>
-        <span>{errors[rest.name]?.message?.toString()}</span>
-      </div>
+      <ErrorField message={errors[rest.name]?.message?.toString()} />
     </div>
   );
 }
