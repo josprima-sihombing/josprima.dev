@@ -11,9 +11,31 @@ import useClickOutside from "@/hooks/commons/use-click-outside";
 import { usePathname } from "next/navigation";
 import cn from "classnames";
 import Container from "../../atoms/container";
+import { Variants, motion } from "framer-motion";
 
 type NavbarProps = {
   className?: string;
+};
+
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const item: Variants = {
+  hidden: { opacity: 0, x: -100 },
+  show: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      ease: "linear",
+    },
+  },
 };
 
 export default function Navbar({ className }: NavbarProps) {
@@ -45,6 +67,10 @@ export default function Navbar({ className }: NavbarProps) {
     hideMenu();
   }, [pathName]);
 
+  const menuClass = cn(css.menus, {
+    [css.menus__open]: isOpen,
+  });
+
   return (
     <nav className={classNames}>
       <Container className={css.navbar}>
@@ -57,14 +83,29 @@ export default function Navbar({ className }: NavbarProps) {
         </Button>
         <Logo className={css.logo} />
 
-        <div
-          className={`${css.menus} ${isOpen ? css.menus__open : ""}`}
+        <motion.div
+          className={menuClass}
           ref={menuRef}
+          variants={container}
+          initial="hidden"
+          whileInView="show"
         >
+          <motion.div variants={item}>
+            <Link href="/">Home</Link>
+          </motion.div>
+          <motion.div variants={item}>
+            <Link href="/post">Posts</Link>
+          </motion.div>
+          <motion.div variants={item}>
+            <Link href="/contact">Contact</Link>
+          </motion.div>
+        </motion.div>
+
+        {/* <div className={menuClass} ref={menuRef}>
           <Link href="/">Home</Link>
-          {/* <Link href="/post">Posts</Link>
-          <Link href="/contact">Contact</Link> */}
-        </div>
+          <Link href="/post">Posts</Link>
+          <Link href="/contact">Contact</Link>
+        </div> */}
       </Container>
     </nav>
   );
