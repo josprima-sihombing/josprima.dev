@@ -2,11 +2,10 @@ import classNames from "classnames";
 import Container from "../../atoms/container";
 
 import css from "./style.module.scss";
-import { sourceSerif } from "@/fonts";
 
 export default function HeroSection() {
-  const cnTitle = classNames(css.section__title, sourceSerif.className);
-  const cnSubTitle = classNames(css.section__sub_title, sourceSerif.className);
+  const cnTitle = classNames(css.section__title);
+  const cnSubTitle = classNames(css.section__sub_title);
 
   return (
     <div className={css.root}>

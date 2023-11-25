@@ -1,0 +1,9 @@
+@use "/src/styles/variables.module.scss" as var;
+
+.root {
+  padding: 2rem 0.8rem;
+
+  &__heading {
+    font-family: var.$font-source-serif;
+  }
+}

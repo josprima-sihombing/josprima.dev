@@ -100,12 +100,6 @@ export default function Navbar({ className }: NavbarProps) {
             <Link href="/contact">Contact</Link>
           </motion.div>
         </motion.div>
-
-        {/* <div className={menuClass} ref={menuRef}>
-          <Link href="/">Home</Link>
-          <Link href="/post">Posts</Link>
-          <Link href="/contact">Contact</Link>
-        </div> */}
       </Container>
     </nav>
   );

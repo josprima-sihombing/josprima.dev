@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 
 import "@/styles/globals.css";
-import { openSans } from "@/fonts";
+import { openSans, sourceSerif } from "@/fonts";
+import classNames from "classnames";
 
 export const metadata: Metadata = {
   title: "Josprima.dev",
@@ -12,8 +13,14 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const classList = classNames(
+    openSans.className,
+    openSans.variable,
+    sourceSerif.variable,
+  );
+
   return (
-    <html lang="en" className={openSans.className}>
+    <html lang="en" className={classList}>
       <body>{children}</body>
     </html>
   );

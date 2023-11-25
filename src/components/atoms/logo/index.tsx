@@ -1,7 +1,6 @@
 import Link from "next/link";
 import css from "./style.module.scss";
 import classNames from "classnames";
-import { sourceSerif } from "@/fonts";
 import stringToCharacter from "@/utils/string-to-character";
 
 type LogoProps = {
@@ -9,7 +8,7 @@ type LogoProps = {
 };
 
 export default function Logo({ className }: LogoProps) {
-  const cn = classNames(css.root, className, sourceSerif.className);
+  const cn = classNames(css.root, className);
 
   const chars = stringToCharacter("Josprima.dev");
 

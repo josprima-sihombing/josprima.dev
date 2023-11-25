@@ -1,18 +1,16 @@
+import classNames from "classnames";
 import BackButton from "@/components/atoms/button/back-button";
 import Container from "@/components/atoms/container";
 import Footer from "@/components/sections/footer";
 
 import css from "@/styles/app.module.scss";
 
-import { openSans, sourceSerif } from "@/fonts";
-import classNames from "classnames";
-
 export default function PageLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const cn = classNames(css.root, openSans.variable, sourceSerif.variable);
+  const cn = classNames(css.root);
 
   return (
     <main className={cn}>
