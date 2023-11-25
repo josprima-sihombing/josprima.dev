@@ -9,3 +9,13 @@
     padding-bottom: 1rem;
   }
 }
+
+.form {
+  &__field {
+    margin-bottom: 1.5rem;
+  }
+
+  &__field:last-of-type {
+    margin-bottom: 0;
+  }
+}

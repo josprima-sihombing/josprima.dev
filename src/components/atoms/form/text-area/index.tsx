@@ -1,20 +1,19 @@
-import { FieldValues, useController } from "react-hook-form";
+import {
+  FieldValues,
+  UseControllerProps,
+  useController,
+} from "react-hook-form";
 
 import classNames from "classnames";
 import Typography from "@/components/atoms/typography";
-import { HTMLInputTypeAttribute } from "react";
-
-import css from "../style.module.scss";
 import { FieldProps, RhfFieldProps } from "../field-props";
 
-type TextInputProps = FieldProps & {
-  type?: HTMLInputTypeAttribute;
-};
+import css from "../style.module.scss";
 
-export default function TextInput<T extends FieldValues>(
-  props: RhfFieldProps<T, TextInputProps>,
+export default function TextArea<T extends FieldValues>(
+  props: RhfFieldProps<T, FieldProps>,
 ) {
-  const { className, label, placeholder = "", type = "text", ...rest } = props;
+  const { className, label, placeholder = "", ...rest } = props;
 
   const {
     field,
@@ -23,6 +22,7 @@ export default function TextInput<T extends FieldValues>(
   } = useController<T>(rest);
 
   const classList = classNames(css.root, className);
+
   const fieldClass = classNames({
     [css.error]: fieldState.error?.message ? true : false,
   });
@@ -31,9 +31,10 @@ export default function TextInput<T extends FieldValues>(
     <div className={classList}>
       <label>
         <Typography variant="label">{label}</Typography>
-        <input
+        <textarea
           className={fieldClass}
-          type={type}
+          cols={30}
+          rows={10}
           placeholder={placeholder}
           {...field}
         />

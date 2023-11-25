@@ -10,14 +10,19 @@
     flex-direction: column;
     gap: 0.4rem;
 
-    input {
+    input, textarea {
       border: 1px solid var.$black_20;
       border-radius: 0.5rem;
       padding: 0.8rem 1rem;
       font-size: 1rem;
+      font-family: var.$font-open-sans;
 
       &::placeholder {
         color: var.$black_30;
+      }
+
+      &.error {
+        border-color: var.$red;
       }
     }
   }

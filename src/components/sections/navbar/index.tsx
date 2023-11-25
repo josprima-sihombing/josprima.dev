@@ -94,9 +94,6 @@ export default function Navbar({ className }: NavbarProps) {
             <Link href="/">Home</Link>
           </motion.div>
           <motion.div variants={item}>
-            <Link href="/post">Posts</Link>
-          </motion.div>
-          <motion.div variants={item}>
             <Link href="/contact">Contact</Link>
           </motion.div>
         </motion.div>
