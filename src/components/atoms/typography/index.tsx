@@ -11,7 +11,8 @@ type TypographyProps = {
     | "caption"
     | "section-title"
     | "card-title"
-    | "card-title-sm";
+    | "card-title-sm"
+    | "label";
   className?: string;
   children: string | React.ReactNode;
   style?: CSSProperties;
@@ -33,6 +34,7 @@ export default function Typography({
       [css.root__card_title]: variant === "card-title",
       [css.root__card_title_sm]: variant === "card-title-sm",
       [css.root__caption]: variant === "caption",
+      [css.root__label]: variant === "label",
     },
     className,
   );
@@ -63,6 +65,9 @@ export default function Typography({
     case "caption":
       CustomTag = "span";
       break;
+
+    case "label":
+      CustomTag = "span";
 
     case "body":
     default:

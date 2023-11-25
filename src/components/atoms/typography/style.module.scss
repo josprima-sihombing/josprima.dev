@@ -37,4 +37,10 @@
     font-size: 12px;
     color: var.$black_50;
   }
+
+  &__label {
+    font-size: 1rem;
+    color: var.$black_90;
+    font-weight: 700;
+  }
 }

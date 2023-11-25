@@ -1,0 +1,31 @@
+@use "/src/styles/variables.module.scss" as var;
+
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+
+  label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+
+    input {
+      border: 1px solid var.$black_20;
+      border-radius: 0.5rem;
+      padding: 0.8rem 1rem;
+      font-size: 1rem;
+
+      &::placeholder {
+        color: var.$black_30;
+      }
+    }
+  }
+
+  &__error {
+    span {
+      font-size: 0.8rem;
+      color: var.$red;
+    }
+  }
+}

@@ -1,6 +1,6 @@
 "use client";
 
-import { useForm } from "react-hook-form";
+import { SubmitHandler, useForm } from "react-hook-form";
 import css from "./style.module.scss";
 import TextInput from "@/components/atoms/form/text-input";
 
@@ -9,25 +9,36 @@ import {
   ContactFormSchemaType,
   contactFormSchema,
 } from "@/data/schemas/contact-form";
+import Container from "@/components/atoms/container";
+import Button from "@/components/atoms/button";
 
 export default function ContactPage() {
   const { handleSubmit, control } = useForm<ContactFormSchemaType>({
     resolver: zodResolver(contactFormSchema),
   });
 
-  const onSubmit = (data) => {
-    console.log(data, "<<<<< data");
+  const onSubmit: SubmitHandler<ContactFormSchemaType> = (data) => {
+    console.log(data, "<<<< data");
+    // TODO: submit the data
   };
 
   return (
-    <div className={css.root}>
+    <Container className={css.root}>
       <h1 className={css.root__heading}>Contact</h1>
 
       <form onSubmit={handleSubmit(onSubmit)}>
-        <TextInput control={control} name="name" />
+        <TextInput
+          control={control}
+          name="name"
+          defaultValue=""
+          label="Who is your name?"
+          placeholder="Your name here"
+        />
 
-        <button type="submit">Submit</button>
+        <Button variant="contained" type="submit" style={{ marginTop: "1rem" }}>
+          Submit
+        </Button>
       </form>
-    </div>
+    </Container>
   );
 }
