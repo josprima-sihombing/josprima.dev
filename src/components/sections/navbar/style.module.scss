@@ -30,37 +30,10 @@
     justify-content: flex-start;
     gap: 18px;
     padding: 8px var.$padding_sm;
-
-    &__open {
-      &::after {
-        content: "";
-        position: fixed;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        background-color: rgba($color: var.$black_80, $alpha: 0.5);
-        z-index: 8;
-      }
-    }
   }
 
   .menus {
     display: none;
-
-    &__open {
-      display: flex;
-      flex-direction: column;
-      align-items: stretch;
-      position: fixed;
-      left: 0;
-      top: 0;
-      background-color: var.$white;
-      width: 240px;
-      height: 100%;
-      padding: var.$padding;
-      z-index: 99;
-    }
   }
 
   .toggle_btn {
