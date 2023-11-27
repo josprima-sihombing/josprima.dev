@@ -11,6 +11,7 @@ export type ButtonProps = {
   onClick?: () => void;
   style?: CSSProperties;
   variant?: ButtonVariantType;
+  isLoading?: boolean;
 };
 
 export default function Button({
@@ -20,6 +21,7 @@ export default function Button({
   onClick,
   style,
   variant = "contained",
+  isLoading = false,
 }: ButtonProps) {
   const cn = classNames(css.root, className, {
     [css.root__contained]: variant === "contained",
@@ -27,7 +29,13 @@ export default function Button({
   });
 
   return (
-    <button type={type} className={cn} onClick={onClick} style={style}>
+    <button
+      type={type}
+      className={cn}
+      onClick={onClick}
+      style={style}
+      disabled={isLoading}
+    >
       {children}
     </button>
   );

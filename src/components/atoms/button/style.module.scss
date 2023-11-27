@@ -19,6 +19,11 @@
     background-color: transparent;
     border: 2px solid var.$blue_70;
   }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
 }
 
 @media screen and (max-width: 768px) {

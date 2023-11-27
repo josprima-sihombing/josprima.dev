@@ -12,18 +12,18 @@ import {
 import Container from "@/components/atoms/container";
 import Button from "@/components/atoms/button";
 import TextArea from "@/components/atoms/form/text-area";
+import useSubmitContactForm from "@/hooks/use-submit-contact-form";
 
 export default function ContactPage() {
   const { handleSubmit, control, reset } = useForm<ContactFormSchemaType>({
     resolver: zodResolver(contactFormSchema),
   });
+  const { isLoading, submitForm } = useSubmitContactForm();
 
-  const onSubmit: SubmitHandler<ContactFormSchemaType> = (data) => {
-    alert(
-      "This submit has not implemented yet. Contact me on LinkedIn: josprima-sihombing",
-    );
+  const onSubmit: SubmitHandler<ContactFormSchemaType> = async (data) => {
+    await submitForm(data);
 
-    // TODO: submit the data
+    // TODO show toast
     reset();
   };
 
@@ -60,7 +60,12 @@ export default function ContactPage() {
           className={css.form__field}
         />
 
-        <Button variant="contained" type="submit" style={{ marginTop: "1rem" }}>
+        <Button
+          variant="contained"
+          type="submit"
+          style={{ marginTop: "1rem" }}
+          isLoading={isLoading}
+        >
           Submit
         </Button>
       </form>
