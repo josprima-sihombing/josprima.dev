@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import "@/styles/globals.css";
 import { openSans, sourceSerif } from "@/fonts";
 import classNames from "classnames";
+import { ToastProvider } from "@/contexts/toast-context";
 
 export const metadata: Metadata = {
   title: "Josprima.dev",
@@ -21,7 +22,9 @@ export default function RootLayout({
 
   return (
     <html lang="en" className={classList}>
-      <body>{children}</body>
+      <body>
+        <ToastProvider>{children}</ToastProvider>
+      </body>
     </html>
   );
 }

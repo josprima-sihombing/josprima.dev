@@ -13,17 +13,19 @@ import Container from "@/components/atoms/container";
 import Button from "@/components/atoms/button";
 import TextArea from "@/components/atoms/form/text-area";
 import useSubmitContactForm from "@/hooks/use-submit-contact-form";
+import { useToast } from "@/contexts/toast-context";
 
 export default function ContactPage() {
   const { handleSubmit, control, reset } = useForm<ContactFormSchemaType>({
     resolver: zodResolver(contactFormSchema),
   });
   const { isLoading, submitForm } = useSubmitContactForm();
+  const { setToast } = useToast();
 
   const onSubmit: SubmitHandler<ContactFormSchemaType> = async (data) => {
     await submitForm(data);
 
-    // TODO show toast
+    setToast({ message: "Success submit form!" });
     reset();
   };
 
