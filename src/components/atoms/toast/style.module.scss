@@ -1,0 +1,22 @@
+@use "/src/styles/variables.module.scss" as var;
+
+.root {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 480px;
+  padding: 2rem;
+  z-index: 999;
+}
+
+.toast {
+  background-color: var.$green;
+  padding: 0.8rem 1rem;
+  border-radius: 0.8rem;
+
+  &__message {
+    color: var.$white;
+  }
+}
