@@ -9,4 +9,12 @@ export const posts = [
       return titleToSlug(this.title);
     },
   },
+  {
+    createdAt: "2023-11-30T14:14:18.039Z",
+    readingTime: 320,
+    title: "What do I do as a frontend engineer",
+    get slug() {
+      return titleToSlug(this.title);
+    },
+  },
 ];
