@@ -4,6 +4,7 @@ import "@/styles/globals.css";
 import { openSans, sourceSerif } from "@/fonts";
 import classNames from "classnames";
 import { ToastProvider } from "@/contexts/toast-context";
+import { SupabaseProvider } from "@/contexts/supabase-context";
 
 export const metadata: Metadata = {
   title: "Josprima.dev",
@@ -23,7 +24,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={classList}>
       <body>
-        <ToastProvider>{children}</ToastProvider>
+        <SupabaseProvider>
+          <ToastProvider>{children}</ToastProvider>
+        </SupabaseProvider>
       </body>
     </html>
   );
