@@ -1,0 +1,25 @@
+@use "/src/styles/variables.module.scss" as var;
+
+.root {
+  width: 120px;
+  height: 80px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  overflow: hidden;
+  pointer-events: none;
+
+  &__badge {
+    font-weight: 700;
+    position: absolute;
+    top: 28px;
+    left: -66px;
+    background-color: var.$blue;
+    text-align: center;
+    width: 300px;
+    transform: rotate(42deg);
+    font-size: 12px;
+    color: var.$white !important;
+    padding: 2px 0;
+  }
+}
