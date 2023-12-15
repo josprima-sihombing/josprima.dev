@@ -1,7 +1,7 @@
 @use "/src/styles/variables.module.scss" as var;
 
 .root {
-  padding: 1rem 1rem;
+  padding: 1.2rem 1.5rem;
   text-decoration: none;
   color: var.$black_80;
   font-size: 1rem;
@@ -20,6 +20,16 @@
     border: 2px solid var.$blue_70;
   }
 
+  &__google {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+
+    > svg {
+      font-size: 1.8rem;
+    }
+  }
+
   &:disabled {
     opacity: 0.5;
     cursor: not-allowed;
@@ -28,6 +38,6 @@
 
 @media screen and (max-width: 768px) {
   .root {
-    padding: 0.6rem 0.8rem;
+    padding: 1rem 1.2rem;
   }
 }
