@@ -4,7 +4,5 @@ namespace NodeJS {
     EMAIL_PASSWORD: string;
     EMAIL_SENDER: string;
     EMAIL_DESTINATION: string;
-    NEXT_PUBLIC_SUPABASE_KEY: string;
-    NEXT_PUBLIC_SUPABASE_URL: string;
   }
 }
