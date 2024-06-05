@@ -829,6 +829,8 @@ function getRandomIndex(n: number) {
   return Math.floor(Math.random() * (n + 1));
 }
 
+export const revalidate = 0;
+
 export async function GET(request: Request) {
   const randomIndex = getRandomIndex(activities.length - 1);
 
