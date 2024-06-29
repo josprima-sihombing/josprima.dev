@@ -10,7 +10,7 @@ function Three() {
   useEffect(() => {
     if (typeof window !== undefined && containerRef.current !== null) {
       const sizes = {
-        width: window.innerWidth,
+        width: document.body.clientWidth,
         height: Math.min(window.innerHeight, 600),
       };
 
