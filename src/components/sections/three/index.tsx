@@ -24,7 +24,9 @@ function Three() {
         75,
         sizes.width / sizes.height,
       );
-      const renderer = new THREE.WebGLRenderer();
+      const renderer = new THREE.WebGLRenderer({
+        alpha: true,
+      });
       const axesHelper = new THREE.AxesHelper(5);
       const gridHelper = new THREE.GridHelper(20, 30);
       const controls = new OrbitControls(camera, renderer.domElement);
@@ -33,13 +35,15 @@ function Three() {
       const material = new THREE.MeshBasicMaterial({ color: "green" });
       const box = new THREE.Mesh(boxGeometry, material);
 
-      scene.add(axesHelper);
-      scene.add(gridHelper);
+      // scene.add(axesHelper);
+      // scene.add(gridHelper);
       // scene.add(box);
 
       camera.position.z = 3;
       camera.position.y = 0.2;
       controls.update();
+
+      controls.enableZoom = false;
 
       // box.position.y = 0.5;
 
