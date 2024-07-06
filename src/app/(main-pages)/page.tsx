@@ -1,12 +1,7 @@
 import HeroSection from "@/components/sections/hero";
 import LatestPost from "@/components/sections/latest-post";
 import SlideShow from "@/components/sections/slide-show";
-import dynamic from "next/dynamic";
 import Image from "next/image";
-
-const Three = dynamic(() => import("@/components/sections/three"), {
-  ssr: false,
-});
 
 export default function Home() {
   const logos = [
@@ -71,7 +66,6 @@ export default function Home() {
   return (
     <>
       <HeroSection />
-      <Three />
       <LatestPost />
       <SlideShow>
         {logos.map((logo) => (
