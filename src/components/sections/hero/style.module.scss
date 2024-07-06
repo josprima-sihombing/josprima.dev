@@ -3,6 +3,8 @@
 .root {
   background-color: var.$orange;
   padding: 90px var.$padding;
+  height: calc(100vh - 63px);
+  box-sizing: border-box;
 }
 
 .section {
