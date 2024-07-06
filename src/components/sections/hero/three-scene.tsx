@@ -5,17 +5,25 @@ import { memo, useEffect, useRef } from "react";
 
 import css from "./style.module.scss";
 
-const ThreeScene = () => {
+export type ThreeSceneProps = {
+  sizes: {
+    width: number;
+    height: number;
+  };
+};
+
+const ThreeScene = ({ sizes }: ThreeSceneProps) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
     if (typeof window !== "undefined" && canvasRef.current) {
-      const sizes = {
-        width: document.body.clientWidth,
-        height: window.innerHeight,
-      };
+      const textureLoader = new THREE.TextureLoader();
+      const marsTexture = textureLoader.load("textures/8k_mars.webp");
+
+      marsTexture.colorSpace = THREE.SRGBColorSpace;
 
       const scene = new THREE.Scene();
+      const clock = new THREE.Clock();
       const camera = new THREE.PerspectiveCamera(
         50,
         sizes.width / sizes.height,
@@ -24,14 +32,16 @@ const ThreeScene = () => {
       camera.position.set(0, 0, 10);
 
       /**
-       * Sphere
+       * Planet
        */
-      const planet = new THREE.Mesh(
-        new THREE.SphereGeometry(2),
-        new THREE.MeshBasicMaterial({ color: "yellow" }),
+      const mars = new THREE.Mesh(
+        new THREE.SphereGeometry(6, 50, 50),
+        new THREE.MeshBasicMaterial({
+          map: marsTexture,
+        }),
       );
 
-      scene.add(planet);
+      scene.add(mars);
 
       const renderer = new THREE.WebGLRenderer({
         canvas: canvasRef.current,
@@ -50,16 +60,30 @@ const ThreeScene = () => {
         // Update renderer
         renderer.setSize(sizes.width, sizes.height);
         renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-        renderer.render(scene, camera);
       });
+
+      const tick = () => {
+        renderer.render(scene, camera);
+
+        mars.rotation.y = (Math.PI * clock.getElapsedTime()) / 300;
+        mars.rotation.x = (Math.PI * clock.getElapsedTime()) / 600;
+
+        window.requestAnimationFrame(tick);
+      };
+
+      tick();
 
       renderer.setSize(sizes.width, sizes.height);
       renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-      renderer.render(scene, camera);
     }
-  }, [canvasRef]);
+  }, [canvasRef, sizes]);
 
   return <canvas className={css.canvas} ref={canvasRef}></canvas>;
 };
 
-export default memo(ThreeScene);
+export default memo(ThreeScene, (prevProps, nextProps) => {
+  return (
+    prevProps.sizes.width === nextProps.sizes.width &&
+    prevProps.sizes.height === prevProps.sizes.height
+  );
+});

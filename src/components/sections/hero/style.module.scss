@@ -1,7 +1,7 @@
 @use "/src/styles/variables.module.scss" as var;
 
 .root {
-  background-color: var.$orange;
+  background-color: #000;
   padding: 90px var.$padding;
   height: calc(100vh - 63px);
   box-sizing: border-box;

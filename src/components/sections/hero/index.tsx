@@ -1,8 +1,12 @@
+"use client";
+
 import classNames from "classnames";
 import dynamic from "next/dynamic";
 import Container from "@/components/atoms/container";
 
 import css from "./style.module.scss";
+import { useEffect, useRef, useState } from "react";
+import { ThreeSceneProps } from "./three-scene";
 
 const ThreeScene = dynamic(() => import("./three-scene"), { ssr: false });
 
@@ -10,9 +14,37 @@ export default function HeroSection() {
   const cnTitle = classNames(css.section__title);
   const cnSubTitle = classNames(css.section__sub_title);
 
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [sizes, setSizes] = useState<ThreeSceneProps["sizes"]>({
+    width: 0,
+    height: 0,
+  });
+
+  useEffect(() => {
+    setSizes({
+      width: containerRef.current?.clientWidth || 0,
+      height: containerRef.current?.clientHeight || 0,
+    });
+  }, [containerRef]);
+
+  useEffect(() => {
+    const resizeCallback = () => {
+      setSizes({
+        width: containerRef.current?.clientWidth || 0,
+        height: containerRef.current?.clientHeight || 0,
+      });
+    };
+
+    window.addEventListener("resize", resizeCallback);
+
+    return () => {
+      window.removeEventListener("resize", resizeCallback);
+    };
+  }, []);
+
   return (
-    <div className={css.root}>
-      <ThreeScene />
+    <div className={css.root} ref={containerRef}>
+      <ThreeScene sizes={sizes} />
       <Container className={css.section}>
         <p className={css.section__intro}>Hi, my name is</p>
         <h2 className={cnTitle}>Josprima Sihombing.</h2>
