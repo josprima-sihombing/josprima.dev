@@ -5,9 +5,18 @@
   padding: 90px var.$padding;
   height: calc(100vh - 63px);
   box-sizing: border-box;
+  position: relative;
+}
+
+.canvas {
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 
 .section {
+  position: relative;
+
   &__intro {
     color: var.$black;
     letter-spacing: 4px;

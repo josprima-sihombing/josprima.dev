@@ -1,7 +1,10 @@
 import classNames from "classnames";
-import Container from "../../atoms/container";
+import dynamic from "next/dynamic";
+import Container from "@/components/atoms/container";
 
 import css from "./style.module.scss";
+
+const ThreeScene = dynamic(() => import("./three-scene"), { ssr: false });
 
 export default function HeroSection() {
   const cnTitle = classNames(css.section__title);
@@ -9,6 +12,7 @@ export default function HeroSection() {
 
   return (
     <div className={css.root}>
+      <ThreeScene />
       <Container className={css.section}>
         <p className={css.section__intro}>Hi, my name is</p>
         <h2 className={cnTitle}>Josprima Sihombing.</h2>
