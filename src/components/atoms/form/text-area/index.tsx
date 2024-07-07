@@ -4,12 +4,12 @@ import {
   useController,
 } from "react-hook-form";
 
-import classNames from "classnames";
 import Typography from "@/components/atoms/typography";
+import classNames from "classnames";
 import { FieldProps, RhfFieldProps } from "../field-props";
 
-import css from "../style.module.scss";
 import ErrorField from "../error-field";
+import css from "../style.module.scss";
 
 export default function TextArea<T extends FieldValues>(
   props: RhfFieldProps<T, FieldProps>,

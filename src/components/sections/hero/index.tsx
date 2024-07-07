@@ -1,11 +1,11 @@
 "use client";
 
+import Container from "@/components/atoms/container";
 import classNames from "classnames";
 import dynamic from "next/dynamic";
-import Container from "@/components/atoms/container";
 
-import css from "./style.module.scss";
 import { useEffect, useRef, useState } from "react";
+import css from "./style.module.scss";
 import { ThreeSceneProps } from "./three-scene";
 
 const ThreeScene = dynamic(() => import("./three-scene"), { ssr: false });

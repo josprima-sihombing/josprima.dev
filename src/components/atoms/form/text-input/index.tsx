@@ -1,12 +1,12 @@
 import { FieldValues, useController } from "react-hook-form";
 
-import classNames from "classnames";
 import Typography from "@/components/atoms/typography";
+import classNames from "classnames";
 import { HTMLInputTypeAttribute } from "react";
 
-import css from "../style.module.scss";
-import { FieldProps, RhfFieldProps } from "../field-props";
 import ErrorField from "../error-field";
+import { FieldProps, RhfFieldProps } from "../field-props";
+import css from "../style.module.scss";
 
 type TextInputProps = FieldProps & {
   type?: HTMLInputTypeAttribute;

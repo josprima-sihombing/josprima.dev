@@ -1,7 +1,7 @@
 "use client";
 
-import * as THREE from "three";
 import { memo, useEffect, useRef } from "react";
+import * as THREE from "three";
 
 import css from "./style.module.scss";
 

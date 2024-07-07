@@ -1,6 +1,6 @@
+import classNames from "classnames";
 import { CSSProperties } from "react";
 import css from "./style.module.scss";
-import classNames from "classnames";
 
 export type ButtonVariantType = "contained" | "outlined";
 

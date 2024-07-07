@@ -1,8 +1,8 @@
 "use client";
 
-import { MdArrowBack } from "react-icons/md";
 import Button, { ButtonProps } from "@/components/atoms/button";
 import { useRouter } from "next/navigation";
+import { MdArrowBack } from "react-icons/md";
 
 export default function BackButton({ ...props }: ButtonProps) {
   const router = useRouter();

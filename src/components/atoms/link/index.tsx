@@ -1,9 +1,9 @@
 "use client";
 
-import NextLink from "next/link";
-import css from "./style.module.scss";
-import { usePathname } from "next/navigation";
 import classNames from "classnames";
+import NextLink from "next/link";
+import { usePathname } from "next/navigation";
+import css from "./style.module.scss";
 
 type LinkProps = {
   href: string;

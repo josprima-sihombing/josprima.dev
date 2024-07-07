@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 
 import "@/styles/globals.css";
+import DevelopmentBadge from "@/components/development-badge";
+import { ToastProvider } from "@/contexts/toast-context";
 import { openSans, sourceSerif } from "@/fonts";
 import classNames from "classnames";
-import { ToastProvider } from "@/contexts/toast-context";
-import DevelopmentBadge from "@/components/development-badge";
 
 export const metadata: Metadata = {
   title: "Josprima.dev",

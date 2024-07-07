@@ -1,7 +1,7 @@
+import stringToCharacter from "@/utils/string-to-character";
+import classNames from "classnames";
 import Link from "next/link";
 import css from "./style.module.scss";
-import classNames from "classnames";
-import stringToCharacter from "@/utils/string-to-character";
 
 type LogoProps = {
   className?: string;

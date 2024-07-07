@@ -1,7 +1,7 @@
-import classNames from "classnames";
 import BackButton from "@/components/atoms/button/back-button";
 import Container from "@/components/atoms/container";
 import Footer from "@/components/sections/footer";
+import classNames from "classnames";
 
 import css from "@/styles/app.module.scss";
 

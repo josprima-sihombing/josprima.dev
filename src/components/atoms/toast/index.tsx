@@ -1,8 +1,8 @@
-import { motion, Variants } from "framer-motion";
+import { Variants, motion } from "framer-motion";
 
-import css from "./style.module.scss";
-import Typography from "../typography";
 import { useToast } from "@/contexts/toast-context";
+import Typography from "../typography";
+import css from "./style.module.scss";
 
 const variants: Variants = {
   hidden: {

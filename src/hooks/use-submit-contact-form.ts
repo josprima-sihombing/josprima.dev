@@ -1,5 +1,5 @@
-import wretch from "wretch";
 import { useState } from "react";
+import wretch from "wretch";
 
 export default function useSubmitContactForm() {
   const [isLoading, setIsLoading] = useState(false);

@@ -1,19 +1,19 @@
 "use client";
 
+import TextInput from "@/components/atoms/form/text-input";
 import { SubmitHandler, useForm } from "react-hook-form";
 import css from "./style.module.scss";
-import TextInput from "@/components/atoms/form/text-input";
 
-import { zodResolver } from "@hookform/resolvers/zod";
+import Button from "@/components/atoms/button";
+import Container from "@/components/atoms/container";
+import TextArea from "@/components/atoms/form/text-area";
+import { useToast } from "@/contexts/toast-context";
 import {
   ContactFormSchemaType,
   contactFormSchema,
 } from "@/data/schemas/contact-form-schema";
-import Container from "@/components/atoms/container";
-import Button from "@/components/atoms/button";
-import TextArea from "@/components/atoms/form/text-area";
 import useSubmitContactForm from "@/hooks/use-submit-contact-form";
-import { useToast } from "@/contexts/toast-context";
+import { zodResolver } from "@hookform/resolvers/zod";
 
 export default function ContactPage() {
   const { handleSubmit, control, reset } = useForm<ContactFormSchemaType>({

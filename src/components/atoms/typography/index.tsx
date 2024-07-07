@@ -1,7 +1,7 @@
 import classNames from "classnames";
 
-import css from "./style.module.scss";
 import { CSSProperties } from "react";
+import css from "./style.module.scss";
 
 type TypographyProps = {
   variant?:

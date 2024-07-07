@@ -1,11 +1,11 @@
 import Container from "@/components/atoms/container";
 import Typography from "@/components/atoms/typography";
 
-import css from "./style.module.scss";
-import PostItem from "./post-item";
 import Grid from "@/components/atoms/grid";
 import Row from "@/components/atoms/row";
 import { posts } from "@/data/posts/posts";
+import PostItem from "./post-item";
+import css from "./style.module.scss";
 
 export default function LatestPost() {
   return (
