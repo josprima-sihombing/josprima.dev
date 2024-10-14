@@ -1,3 +1,4 @@
+import Character from "@/components/character";
 import HeroSection from "@/components/sections/hero";
 import LatestPost from "@/components/sections/latest-post";
 import SlideShow from "@/components/sections/slide-show";
@@ -65,7 +66,8 @@ export default function Home() {
 
   return (
     <>
-      <HeroSection />
+      <Character />
+      {/* <HeroSection /> */}
       <LatestPost />
       <SlideShow>
         {logos.map((logo) => (
